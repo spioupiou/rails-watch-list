@@ -1,0 +1,16 @@
+<% @list.movies.each do |movie| %>
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="<%= movie.poster_url %>" alt="poster">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= movie.title %></h5>
+          <p class="card-text"><%= movie.overview %></p>
+          <button class="btn btn-primary"><%= link_to "Remove", bookmark_path(@) %></button>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

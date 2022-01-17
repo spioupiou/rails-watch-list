@@ -1,5 +1,22 @@
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :img_url %>
-  <%= f.submit "Create" %>
-<% end %>
+<div class="background secondary">
+  <div class="watchlist-navbar">
+    <div class="logo">
+      <%= image_tag "logo.png" %>
+      <div>
+        <p>Grab your</p>
+        <p class="centered">Popcorn</p>
+      </div>
+    </div>
+    <%= link_to "Home", lists_path, class:"btn btn-primary" %>
+  </div>
+
+  <div class="form-container">
+    <h2>Create a new watchlist</h2>
+    <%= simple_form_for(@list) do |f| %>
+      <%= f.input :name, input_html: { autocomplete: 'off' } %>
+      <%= f.input :img_url, label: "Picture URL", input_html: { autocomplete: 'off' } %>
+      <%= f.submit "Create", class: 'btn btn-block btn-secondary' %>
+    <% end %>
+    <%= link_to "Back", lists_path, class:"btn btn-outline-secondary" %>
+  </div>
+</div>

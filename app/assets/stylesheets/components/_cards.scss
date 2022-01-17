@@ -1,0 +1,20 @@
+.list-card {
+  border-radius: 8px;
+  min-height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  background-size: cover;
+
+  a {
+    color: white;
+    font-size: 24px;
+  }
+}
+
+.movie-card {
+  img {
+    height: 200px;
+  }
+}

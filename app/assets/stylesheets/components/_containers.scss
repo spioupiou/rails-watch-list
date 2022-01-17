@@ -1,0 +1,53 @@
+.background {
+  background-size: cover;
+  height: 100vh;
+}
+
+.background.primary {
+  background-image: linear-gradient(rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 1)), image-url('background-1.jpg');
+}
+
+.background.secondary {
+  background-image: linear-gradient(rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 1)), image-url('background-2.jpeg');
+}
+
+.content-container {
+  max-width: 80vw;
+  margin: auto;
+
+  h3 {
+    margin: 64px 0 24px 0;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2)
+  }
+}
+
+.cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 80vw;
+
+  .row {
+    overflow-x: auto;
+  }
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 80px auto;
+  background-color: rgba(20, 20, 20, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+
+  .btn {
+    border-radius: 4px;
+    margin-top: 32px;
+  }
+
+  h2 {
+    color: $pink;
+    margin-bottom: 16px;
+  }
+}

@@ -14,7 +14,15 @@
 }
 
 .movie-card {
+  background-color: white;
+  display: flex;
+
   img {
-    height: 200px;
+    object-fit: cover;
+    max-width: 200px;
+  }
+
+  .movie-card-body {
+    padding: 16px;
   }
 }

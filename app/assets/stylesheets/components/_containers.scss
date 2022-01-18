@@ -11,6 +11,11 @@
   background-image: linear-gradient(rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 1)), image-url('background-2.jpeg');
 }
 
+.banner {
+  background-size: cover;
+  height: 35vh;
+}
+
 .content-container {
   max-width: 80vw;
   margin: auto;
@@ -43,11 +48,23 @@
 
   .btn {
     border-radius: 4px;
-    margin-top: 32px;
+    margin-bottom: 18px;
   }
 
   h2 {
     color: $pink;
     margin-bottom: 16px;
   }
+}
+
+@media (max-width: 576px) {
+  .movie-card-container {
+    max-width: 400px;
+  }
+}
+
+.movie-card-container {
+  width: 720px;
+  margin: 0 auto;
+  border-radius: 4px;
 }

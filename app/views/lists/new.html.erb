@@ -7,7 +7,7 @@
         <p class="centered">Popcorn</p>
       </div>
     </div>
-    <%= link_to "Home", lists_path, class:"btn btn-primary" %>
+    <%= link_to "Home", root_path, class:"btn btn-primary" %>
   </div>
 
   <div class="form-container">
@@ -17,6 +17,6 @@
       <%= f.input :img_url, label: "Picture URL", input_html: { autocomplete: 'off' } %>
       <%= f.submit "Create", class: 'btn btn-block btn-secondary' %>
     <% end %>
-    <%= link_to "Back", lists_path, class:"btn btn-outline-secondary" %>
+    <%= link_to "Back", root_path, class:"btn btn-block btn-outline-secondary" %>
   </div>
 </div>

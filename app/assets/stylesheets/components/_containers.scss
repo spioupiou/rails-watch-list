@@ -11,19 +11,28 @@
   background-image: linear-gradient(rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 1)), image-url('background-2.jpeg');
 }
 
-.banner {
-  background-size: cover;
-  height: 35vh;
-}
-
 .content-container {
   max-width: 80vw;
   margin: auto;
 
+  h1 {
+    margin-top: 80px;
+    color: white;
+    margin-bottom: 16px;
+    font-size: 48px;
+  }
+
+  p {
+    color: white;
+    font-size: 17px;
+  }
+
   h3 {
     margin: 64px 0 24px 0;
     color: white;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2)
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    max-width: 180px;
+    padding-left: 10px;
   }
 }
 
@@ -63,8 +72,37 @@
   }
 }
 
-.movie-card-container {
-  width: 720px;
-  margin: 0 auto;
-  border-radius: 4px;
+.banner {
+  background-size: cover;
+  height: 450px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align: center;
+  position: relative;
+
+  .banner-content {
+    margin-top: 32px;
+  }
+
+  h1 {
+    color: white;
+    font-size: 64px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2)
+  }
+
+  a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 8px 0;
+  }
+}
+
+.container.movies {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 265px;
+  margin-left: auto;
+  margin-right: auto;
 }

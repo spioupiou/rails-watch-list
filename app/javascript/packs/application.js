@@ -17,9 +17,10 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 import { loadDynamicBannerText } from '../components/home-title';
+import { highlightText } from '../components/category-title';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
-  loadDynamicBannerText();
+  highlightText();
 });

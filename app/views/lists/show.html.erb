@@ -1,4 +1,4 @@
-<div class="banner" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= image_path "anime.jpg" %>);">
+<div class="banner" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path @list.photo.key %>);">
   <div class="watchlist-navbar">
     <div class="logo">
       <%= image_tag "logo.png" %>
@@ -9,26 +9,28 @@
     </div>
     <%= link_to "Home", root_path, class:"btn btn-primary" %>
   </div>
-  <h1><%= @list.name %></h1>
-  <%= link_to "Add a movie", new_list_bookmark_path(@list.id) %>
+  <div class="banner-content">
+    <h1><%= @list.name %></h1>
+    <%= link_to "Add a movie", new_list_bookmark_path(@list.id), id: "highlight" %>
+  </div>
 </div>
 
-<div class="container">
+<div class="container movies">
   <div class="row">
   <% @bookmarks.each do |bookmark| %>
     <% movie_id = bookmark.movie_id %>
     <% movie = Movie.find(movie_id) %>
-      <div class="movie-card-container">
-        <div class="movie-card">
-          <img src="<%= movie.poster_url %>" class="card-img-top" alt="poster">
-          <div class="movie-card-body">
-            <h5><%= movie.title %></h5>
-            <p><%= movie.overview %></p>
-            <p class="text-right mt-2"><i class="fas fa-quote-left"></i> <%= bookmark.comment %></p>
-            <button class="btn btn-primary"><%= link_to "Delete", bookmark_path(bookmark.id), method: "delete" %></button>
-          </div>
-        </div>
+    <div class="movie-card mt-3">
+      <img src="<%= movie.poster_url %>" class="card-img-top" alt="poster">
+      <div class="movie-card-body">
+        <h5><%= movie.title %></h5>
+        <p><%= movie.overview %></p>
+        <p class="text-right mt-2"><i class="fas fa-quote-left"></i> <%= bookmark.comment %></p>
+        <%= link_to bookmark_path(bookmark.id), method: "delete" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
       </div>
+    </div>
   <% end %>
 </div>
 </div>

@@ -11,12 +11,14 @@
   </div>
 
   <div class="content-container">
-    <h1 id="home-typed-text"></h1>
-    <h3>Recommended</h3>
+    <h1>Looking for a good movie to watch?</h1>
+    <p>Welcome to GrabYourPopcorn.com, your ultimate guide for anything movie-related!</p>
+    <p>Feel free to browse through the recommandations or create your own watch list.
+    <h3 id="highlight">Suggestions</h3>
     <div class="container-fluid cards-container">
       <div class="row text-center flex-nowrap">
         <% @lists.each do |list| %>
-          <div class="col-3 list-card mr-3" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= image_path "anime.jpg" %>);">
+          <div class="col-3 list-card mr-3" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path list.photo.key %>);">
             <h5 class="card-title text-center align-center"><%= link_to list.name, list_path(list.id) %>
           </div>
         <% end %>
@@ -24,3 +26,8 @@
     </div>
   </div>
 </div>
+
+
+
+<%#= cl_image_tag("https://res.cloudinary.com/dcdhwhwwv/image/upload/v1642550109/bkztvaxoqj8lwaf6uets.jpg",
+      width: 300, height: 100, crop: :fill) %>

@@ -1,5 +1,22 @@
-<%= simple_form_for([@list, @bookmark]) do |f| %>
-  <%= f.association :movie %>
-  <%= f.input :comment %>
-  <%= f.submit "Create Bookmark" %>
-<% end %>
+<div class="background secondary">
+  <div class="watchlist-navbar">
+    <div class="logo">
+      <%= image_tag "logo.png" %>
+      <div>
+        <p>Grab your</p>
+        <p class="centered">Popcorn</p>
+      </div>
+    </div>
+    <%= link_to "Home", root_path, class:"btn btn-primary" %>
+  </div>
+
+  <div class="form-container">
+    <h2>Add a movie</h2>
+    <%= simple_form_for([@list, @bookmark]) do |f| %>
+      <%= f.association :movie %>
+      <%= f.input :comment %>
+      <%= f.submit "Add", class: 'btn btn-block btn-secondary' %>
+    <% end %>
+    <%= link_to "Back", root_path, class:"btn btn-block btn-outline-secondary" %>
+  </div>
+</div>

@@ -82,6 +82,16 @@
 
   .banner-content {
     margin-top: 32px;
+
+    .btn-primary {
+      background-color: $greeny-blue;
+      border: 0;
+      border-radius: 8px;
+
+      &:hover {
+      background-color: $gray;
+      }
+    }
   }
 
   h1 {

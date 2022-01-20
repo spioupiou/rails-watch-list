@@ -1,3 +1,7 @@
+.link, .link:hover {
+  text-decoration: none;
+}
+
 .list-card {
   border-radius: 8px;
   min-height: 260px;
@@ -6,11 +10,22 @@
   align-items: center;
   min-width: 320px;
   background-size: cover;
+  background-position: center center;
+  transition: ease-in-out 5s;
 
-  a {
+  h5, a {
     color: white;
     font-size: 24px;
-    text-decoration: none;
+  }
+
+  &:hover {
+
+    background-size: 200%;
+
+
+    h5 {
+      font-size: 32px;
+    }
   }
 }
 

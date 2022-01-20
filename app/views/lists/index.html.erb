@@ -18,7 +18,7 @@
     <div class="container-fluid cards-container">
       <div class="row text-center flex-nowrap">
         <% @lists.each do |list| %>
-          <div class="col-3 list-card mr-3" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path list.photo.key %>);">
+          <div class="col-3 list-card mr-3" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('cinema.jpeg') %>)">
             <h5 class="card-title text-center align-center"><%= link_to list.name, list_path(list.id) %>
           </div>
         <% end %>

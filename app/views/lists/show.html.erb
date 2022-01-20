@@ -1,4 +1,4 @@
-<div class="banner" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path @list.photo.key %>);">
+<div class="banner" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : image_path('cinema.jpeg') %>)">
   <div class="watchlist-navbar">
     <div class="logo">
       <%= image_tag "logo.png" %>

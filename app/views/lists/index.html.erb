@@ -19,7 +19,7 @@
       <div class="row text-center flex-nowrap">
         <% @lists.each do |list| %>
           <%= link_to list_path(list.id), class: "link" do %>
-            <div class="col-3 list-card mr-3" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_url('cinema.jpeg') %>)">
+            <div class="col-3 list-card mr-3" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_url('cinema.jpg') %>)">
               <h5 class="card-title text-center align-center"><%= list.name %></h5>
             </div>
           <% end %>

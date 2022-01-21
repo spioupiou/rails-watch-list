@@ -16,11 +16,13 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import { loadDynamicBannerText } from '../components/home-title';
-import { highlightText } from '../components/category-title';
+import { loadDynamicBannerText } from '../components/typed-title';
+import { highlightText } from '../components/highlight-title';
+import { initAOS } from '../components/fade-in';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
   highlightText();
+  initAOS();
 });

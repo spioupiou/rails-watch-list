@@ -51,14 +51,21 @@
     position: relative;
   }
 
+  .flex-card-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .fa-quote-left, .fa-trash-alt {
     color: rgba(0,0,0,0.7)
   }
 
   .fa-trash-alt {
     font-size: 24px;
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
+  }
+
+  .muted {
+    color: grey;
   }
 }

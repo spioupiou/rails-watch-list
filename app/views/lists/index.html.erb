@@ -1,15 +1,5 @@
 <div class="background primary">
-  <div class="watchlist-navbar">
-    <div class="logo">
-      <%= image_tag "logo.png" %>
-      <div>
-        <p>Grab your</p>
-        <p class="centered">Popcorn</p>
-      </div>
-    </div>
-    <%= link_to "New watchlist", new_list_path, class:"btn btn-primary" %>
-  </div>
-
+  <%= render "shared/navbar" %>
   <div class="content-container">
     <h1>Looking for a good movie to watch?</h1>
     <p>Welcome to GrabYourPopcorn.com, your ultimate guide for anything movie-related!</p>
@@ -27,4 +17,5 @@
       </div>
     </div>
   </div>
+
 </div>

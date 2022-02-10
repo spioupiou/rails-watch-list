@@ -1,15 +1,5 @@
 <div class="background secondary">
-  <div class="watchlist-navbar">
-    <div class="logo">
-      <%= image_tag "logo.png" %>
-      <div>
-        <p>Grab your</p>
-        <p class="centered">Popcorn</p>
-      </div>
-    </div>
-    <%= link_to "Home", root_path, class:"btn btn-primary" %>
-  </div>
-
+  <%= render "shared/navbar" %>
   <div class="form-container">
     <h2>Create a new watchlist</h2>
     <%= simple_form_for(@list) do |f| %>

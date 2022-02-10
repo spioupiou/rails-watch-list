@@ -18,10 +18,12 @@ require("channels")
 
 import { highlightText } from '../components/highlight-title';
 import { initAOS } from '../components/fade-in';
+import { callApi } from '../components/call-api.js';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
   highlightText();
   initAOS();
+  callApi();
 });

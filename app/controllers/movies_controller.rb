@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
 
   def results
     require 'open-uri'
-    keyword = 'batman'
+    keyword = params[:keyword]
     url = "http://www.omdbapi.com/?s=#{keyword}&apikey=d6e0d7e0"
     response = JSON.parse(URI.open(url).read)
 

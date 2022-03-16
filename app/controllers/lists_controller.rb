@@ -5,7 +5,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    @bookmarks = @list.bookmarks
+    @movies = @list.movies.order(created_at: :desc)
   end
 
   def new
@@ -24,6 +24,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name, :img_url, :photo)
+    params.require(:list).permit(:name, :img_url, :photo, :comment)
   end
 end

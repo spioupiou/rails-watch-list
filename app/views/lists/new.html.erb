@@ -4,6 +4,7 @@
     <h2>Create a new watchlist</h2>
     <%= simple_form_for(@list) do |f| %>
       <%= f.input :name, input_html: { autocomplete: 'off' } %>
+      <%= f.input :comment, input_html: { autocomplete: 'off' } %>
       <%= f.input :photo, as: :file %>
       <%= f.submit "Create", class: 'btn btn-block btn-secondary' %>
     <% end %>

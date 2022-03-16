@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_19_001227) do
+ActiveRecord::Schema.define(version: 2022_03_16_231744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,20 +36,11 @@ ActiveRecord::Schema.define(version: 2022_01_19_001227) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "bookmarks", force: :cascade do |t|
-    t.bigint "movie_id", null: false
-    t.bigint "list_id", null: false
-    t.text "comment"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["list_id"], name: "index_bookmarks_on_list_id"
-    t.index ["movie_id"], name: "index_bookmarks_on_movie_id"
-  end
-
   create_table "lists", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "comment"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -59,9 +50,10 @@ ActiveRecord::Schema.define(version: 2022_01_19_001227) do
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "list_id"
+    t.index ["list_id"], name: "index_movies_on_list_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookmarks", "lists"
-  add_foreign_key "bookmarks", "movies"
+  add_foreign_key "movies", "lists"
 end

@@ -33,14 +33,18 @@ class MoviesController < ApplicationController
   # create a new movie
   def create
     @list = List.find(params[:list_id])
-    @movie = Movie.create!(movie_params)
-    @bookmark = Bookmark.create!(
-      movie_id: @movie.id,
-      list_id: @list.id,
-      comment: "default"
-    )
+    @movie = Movie.new(movie_params)
+    @movie.list = @list
+    @movie.save!
     redirect_to list_path(@list)
   end
+
+  # def destroy
+  #   @bookmark = Bookmark.find(params[:id])
+  #   @list_id = @bookmark.list_id
+  #   @bookmark.destroy
+  #   redirect_to list_path(@list_id)
+  # end
 
   private
 

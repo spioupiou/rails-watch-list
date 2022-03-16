@@ -2,7 +2,6 @@ class MoviesController < ApplicationController
   # search function with keyword
 
   def results
-
   end
 
   def search

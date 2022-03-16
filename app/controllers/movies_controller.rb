@@ -7,10 +7,10 @@ class MoviesController < ApplicationController
 
   def search
     require 'open-uri'
-    require_relative '../../.omdb_key'
 
     keyword = params[:keyword]
-    url = "http://www.omdbapi.com/?s=#{keyword}&apikey=#{$omdb_key}"
+    url = "http://www.omdbapi.com/?s=#{keyword}&apikey=#{ENV['OMDB_KEY']}"
+
     response = JSON.parse(URI.open(url).read)
 
     @movies = []

@@ -1,27 +1,11 @@
 <div class="background secondary">
   <%= render "shared/navbar" %>
 
-  <%= form_with url: results_list_path, method: :get do |f| %>
+  <%= form_with url: search_list_path, method: :get do |f| %>
     <%= f.text_field :keyword, value: params[:keyword], autofocus: true %>
     <%= f.submit "Search", class: "btn btn-warning" %>
   <% end %>
 
-  <!--
-  <form id="search-movies" class="form-inline">
-    <input id="keyword" type="text" class="form-control ml-auto mr-2" placeholder="Find movies">
-    <input type="submit" class="btn btn-primary mr-auto ml-2" value="Search">
-  </form>
-  -->
-
-  <% @movies.each do |movie| %>
-    <h2><%= movie[:title] %></h2>
-    <img src="<%=movie[:poster_url]%>" alt="">
-
-    <%= simple_form_for([@list, @movie]) do |f| %>
-      <%= hidden_field_tag :title, input_html: { value: movie[:title] }  %>
-      <%= hidden_field_tag :poster_url, input_html: { value: movie[:poster_url] } %>
-      <%= f.submit "Add", class: "btn btn-primary" %>
-    <% end %>
-
-  <% end %>
+  <div id="results">
+  </div>
 </div>

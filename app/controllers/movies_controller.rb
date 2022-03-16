@@ -2,6 +2,10 @@ class MoviesController < ApplicationController
   # search function with keyword
 
   def results
+
+  end
+
+  def search
     require 'open-uri'
     keyword = params[:keyword]
     url = "http://www.omdbapi.com/?s=#{keyword}&apikey=d6e0d7e0"
@@ -18,6 +22,10 @@ class MoviesController < ApplicationController
 
     @movie = Movie.new
     @list = List.find(params[:id])
+
+    respond_to do |format|
+      format.js {render layout: false}
+    end
   end
 
   # create a new movie

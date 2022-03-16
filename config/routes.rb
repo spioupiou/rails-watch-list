@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :movies, only: [:new, :create]
     member do
       get 'results', to: "movies#results"
+      get 'search', to: "movies#search"
     end
   end
   resources :bookmarks, only: [:destroy]

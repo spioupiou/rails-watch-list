@@ -1,0 +1,18 @@
+<div class="row">
+  <% movies.each do |movie| %>
+    <div class="col-lg-3 col-md-4 col-sm-3 py-3 d-flex align-items-stretch">
+    <div class="card">
+      <img src="<%=movie[:poster_url]%>" class="card-img-top" alt="poster">
+      <div class="card-body">
+        <h5 class="card-title"><%= movie[:title] %></h5>
+        <%= simple_form_for([@list, @movie]) do |f| %>
+          <%= f.hidden_field :title, value: movie[:title] %>
+          <%= f.hidden_field :poster_url, value: movie[:poster_url] %>
+          <%= f.submit "Add", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>

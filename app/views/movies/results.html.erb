@@ -1,11 +1,15 @@
 <div class="background secondary">
   <%= render "shared/navbar" %>
 
-  <%= form_with url: search_list_path, method: :get do |f| %>
-    <%= f.text_field :keyword, value: params[:keyword], autofocus: true %>
-    <%= f.submit "Search", class: "btn btn-warning" %>
-  <% end %>
+  <div class="container">
 
-  <div id="results">
+    <%= form_with url: search_list_path, method: :get do |f| %>
+      <%= f.text_field :keyword, value: params[:keyword], autofocus: true %>
+      <%= f.submit "Search", class: "btn btn-warning" %>
+    <% end %>
+
+    <div id="results">
+    </div>
+
   </div>
 </div>

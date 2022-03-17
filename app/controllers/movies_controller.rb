@@ -1,6 +1,4 @@
 class MoviesController < ApplicationController
-  # search function with keyword
-
   def results
   end
 
@@ -8,7 +6,7 @@ class MoviesController < ApplicationController
     require 'open-uri'
 
     keyword = params[:keyword]
-    url = "http://www.omdbapi.com/?s=#{keyword}&apikey=#{ENV['OMDB_KEY']}"
+    url = "http://www.omdbapi.com/?s=#{keyword}&type=movie&apikey=#{ENV['OMDB_KEY']}"
 
     response = JSON.parse(URI.open(url).read)
 

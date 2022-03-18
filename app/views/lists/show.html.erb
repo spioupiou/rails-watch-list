@@ -17,8 +17,9 @@
           <div class="card-body">
             <h5 class="card-title"><%= movie.title %></h5>
             <div class="flex-card-div mt-3">
-              <%#= link_to bookmark_path(bookmark.id), method: "delete" do %>
+              <%= link_to movie_path(movie.id), method: "delete" do %>
                 <i class="fas fa-trash-alt"></i>
+              <% end %>
             </div>
           </div>
         </div>

@@ -29,43 +29,18 @@
   }
 }
 
-.movie-card {
-  background-color: white;
-  display: flex;
-  width: 720px;
-  margin: 0 auto;
-  border-radius: 2px;
-
-  .text-right {
-    color: $light-grey;
-  }
-
-  img {
-    object-fit: cover;
-    max-width: 200px;
-  }
-
-  .movie-card-body {
-    padding: 16px;
-    font-size: 14px;
-    position: relative;
-  }
-
-  .flex-card-div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.card {
+  position: relative;
 
   .fa-quote-left, .fa-trash-alt {
-    color: rgba(0,0,0,0.7)
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
 
   .fa-trash-alt {
     font-size: 24px;
-  }
-
-  .muted {
-    color: grey;
   }
 }

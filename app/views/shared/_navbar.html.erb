@@ -1,10 +1,13 @@
 <div class="watchlist-navbar">
-  <div class="logo">
-    <%= image_tag "logo.png" %>
-    <div>
-      <p>Grab your</p>
-      <p class="centered">Popcorn</p>
+  <%= link_to root_path do %>
+    <div class="logo">
+      <%= image_tag "logo.png" %>
+      <div>
+        <p>Grab your</p>
+        <p class="centered">Popcorn</p>
+      </div>
     </div>
-  </div>
+  <% end %>
+
   <%= link_to "New watchlist", new_list_path, class:"btn btn-primary" %>
 </div>

@@ -36,12 +36,12 @@ class MoviesController < ApplicationController
     redirect_to list_path(@list)
   end
 
-  # def destroy
-  #   @bookmark = Bookmark.find(params[:id])
-  #   @list_id = @bookmark.list_id
-  #   @bookmark.destroy
-  #   redirect_to list_path(@list_id)
-  # end
+  def destroy
+    @movie = Bookmark.find(params[:id])
+    @list_id = @bookmark.list_id
+    @bookmark.destroy
+    redirect_to list_path(@list_id)
+  end
 
   private
 

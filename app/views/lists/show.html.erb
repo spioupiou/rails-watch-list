@@ -2,20 +2,24 @@
   <%= render "shared/navbar" %>
   <div class="banner-content">
     <h1><%= @list.name %></h1>
-    <%= link_to "Add a movie", results_list_path(@list.id), class: "btn btn-primary" %>
+    <div id="comment" class="container my-2">
+      <p><%= @list.comment %></p>
+      <%= link_to "Add a movie", results_list_path(@list.id), class: "btn btn-primary mt-2" %>
+    </div>
   </div>
 </div>
-
-<div class="container movies">
+<div class="container">
   <div class="row">
     <% @movies.each do |movie| %>
-      <div class="movie-card mt-3" data-aos="fade-up">
-        <img src="<%= movie.poster_url %>" class="card-img-top" alt="poster">
-        <div class="movie-card-body">
-          <h5><%= movie.title %></h5>
-          <div class="flex-card-div mt-3">
-            <%#= link_to bookmark_path(bookmark.id), method: "delete" do %>
-              <i class="fas fa-trash-alt"></i>
+      <div class="col-lg-3 col-md-4 col-sm-6 py-3 d-flex align-items-stretch">
+        <div class="card">
+          <img src="<%= movie.poster_url %>" class="card-img-top" alt="poster">
+          <div class="card-body">
+            <h5 class="card-title"><%= movie.title %></h5>
+            <div class="flex-card-div mt-3">
+              <%#= link_to bookmark_path(bookmark.id), method: "delete" do %>
+                <i class="fas fa-trash-alt"></i>
+            </div>
           </div>
         </div>
       </div>

@@ -3,10 +3,12 @@
 
   <div class="container">
 
-    <%= form_with url: search_list_path, method: :get do |f| %>
-      <%= f.text_field :keyword, value: params[:keyword], autofocus: true %>
-      <%= f.submit "Search", class: "btn btn-warning" %>
-    <% end %>
+    <div id="search-bar" class="mt-4">
+      <%= form_with url: search_list_path, method: :get do |f| %>
+        <%= f.text_field :keyword, value: params[:keyword], autofocus: true %>
+        <%= f.submit "Search", id: "search-btn" %>
+      <% end %>
+    </div>
 
     <div id="results">
     </div>

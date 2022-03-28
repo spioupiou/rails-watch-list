@@ -8,7 +8,9 @@
           <%= simple_form_for([@list, @movie]) do |f| %>
             <%= f.hidden_field :title, value: movie[:title] %>
             <%= f.hidden_field :poster_url, value: movie[:poster_url] %>
-            <%= f.submit "Add", class: "btn btn-primary" %>
+            <button type="submit" class="btn plus">
+              <i class="fas fa-plus"></i>
+            </button>
           <% end %>
         </div>
       </div>

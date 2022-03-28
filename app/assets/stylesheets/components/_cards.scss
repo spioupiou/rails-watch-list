@@ -29,6 +29,7 @@
 
 .card {
   position: relative;
+  max-width: 300px;
 
   .fa-quote-left, .fa-trash-alt {
     color: white;
@@ -41,6 +42,4 @@
   .fa-trash-alt {
     font-size: 24px;
   }
-
-  max-width: 300px;
 }

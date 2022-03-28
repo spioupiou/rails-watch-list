@@ -4,10 +4,11 @@
       <div class="card">
         <img src="<%=movie[:poster_url]%>" class="card-img-top" alt="poster">
         <div class="card-body">
-          <h5 class="card-title"><%= movie[:title] %></h5>
+          <p class="card-title"><%= movie[:title] %> (<%= movie[:year] %>)</p>
           <%= simple_form_for([@list, @movie]) do |f| %>
             <%= f.hidden_field :title, value: movie[:title] %>
             <%= f.hidden_field :poster_url, value: movie[:poster_url] %>
+            <%= f.hidden_field :year, value: movie[:year] %>
             <button type="submit" class="btn plus">
               <i class="fas fa-plus"></i>
             </button>

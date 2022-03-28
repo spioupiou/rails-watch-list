@@ -15,7 +15,8 @@ class MoviesController < ApplicationController
     response['Search'].each do |movie|
       @movies << {
         title: movie['Title'],
-        poster_url: movie['Poster']
+        poster_url: movie['Poster'],
+        year: movie['Year']
       }
     end
 
